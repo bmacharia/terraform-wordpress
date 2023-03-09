@@ -5,6 +5,15 @@ terraform {
       version = "~> 4.0"
     }
   }
+
+
+  backend "s3" {
+    key            = "terraform.tfstate"
+    bucket         = "terraform-remote-state-wordpress"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-remote"
+  }
+
 }
 
 provider "aws" {
