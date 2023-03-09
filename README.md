@@ -1,1 +1,1 @@
-Deploy WordPress to AWS using terraform
+Deploy WordPress to AWS using terraform.
