@@ -1,1 +1,1 @@
-env_code = "wordpress"
+env_code = "wp"
