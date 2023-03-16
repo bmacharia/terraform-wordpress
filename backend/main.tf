@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "my_bucket" {
+resource "aws_s3_bucket" "terraform_remote_state_wordpress" {
   bucket = "terraform-remote-state-wordpress"
 
 }
