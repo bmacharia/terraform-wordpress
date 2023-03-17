@@ -1,8 +1,8 @@
-data "terraform_remote_state" "vpc" {
+data "terraform_remote_state" "level1" {
   backend = "s3"
   config = {
     bucket = "terraform-remote-state-wordpress"
-    key    = "vpc.tfstate"
+    key    = "level1.tfstate"
     region = "us-east-1"
   }
 }

@@ -15,7 +15,7 @@ module "external_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name   = "${var.env_code}-external"
-  vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id
+  vpc_id = data.terraform_remote_state.level1.outputs.vpc_id
 
 
   ingress_with_cidr_blocks = [
@@ -46,9 +46,9 @@ module "elb" {
 
   load_balancer_type = "application"
 
-  vpc_id          = data.terraform_remote_state.vpc.outputs.vpc_id
+  vpc_id          = data.terraform_remote_state.level1.outputs.vpc_id
   internal        = false
-  subnets         = data.terraform_remote_state.vpc.outputs.public_subnet_id
+  subnets         = data.terraform_remote_state.level1.outputs.public_subnet_id
   security_groups = [module.external_sg.security_group_id]
 
   target_groups = [

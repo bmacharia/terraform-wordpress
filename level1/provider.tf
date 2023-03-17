@@ -6,14 +6,12 @@ terraform {
     }
   }
 
-
   backend "s3" {
-    key            = "terraform.tfstate"
     bucket         = "terraform-remote-state-wordpress"
+    key            = "level1.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-remote"
   }
-
 }
 
 provider "aws" {

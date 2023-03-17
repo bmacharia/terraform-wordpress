@@ -3,7 +3,7 @@ module "private_sg" {
 
   name        = "${var.env_code}-private"
   description = "Allow port 80 and 3306 TCP inbound to ec2 ASG instances within VPC"
-  vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
+  vpc_id      = data.terraform_remote_state.level1.outputs.vpc_id
 
   computed_ingress_with_source_security_group_id = [
     {
@@ -50,7 +50,7 @@ module "autoscaling" {
   desired_capacity          = 4
   health_check_grace_period = 400
   health_check_type         = "EC2"
-  vpc_zone_identifier       = data.terraform_remote_state.vpc.outputs.private_subnet_id
+  vpc_zone_identifier       = data.terraform_remote_state.level1.outputs.private_subnet_id
   target_group_arns         = module.elb.target_group_arns
   force_delete              = true
 

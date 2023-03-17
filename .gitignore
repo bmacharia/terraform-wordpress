@@ -8,11 +8,6 @@
 # Crash log files
 crash.log
 
-# .lock.hcl
-*.lock.hcl
-*.lock.json
-*.lock.hcl*
-
 # Ignore any .tfvars files that are generated automatically for each Terraform run. Most
 # .tfvars files are managed as part of configuration and so should be included in
 # version control.
@@ -25,6 +20,9 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+
+# lock files
+* .terraform.lock.hcl
 
 # Include override files you do wish to add to version control using negated pattern
 #
